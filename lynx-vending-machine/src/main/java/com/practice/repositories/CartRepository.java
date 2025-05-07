@@ -2,7 +2,9 @@ package com.practice.repositories;
 
 import com.practice.models.Cart;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author: Vijaysurya Mandala
@@ -20,8 +22,13 @@ public class CartRepository {
 
     public Cart save(Cart cart) {
 
-        count++;
-        cart.setId(count);
+        if(!carts.containsKey(cart.getId())) {
+
+            count++;
+            cart.setId(count);
+
+        }
+
         carts.put(cart.getId(), cart);
 
         return cart;
@@ -30,6 +37,18 @@ public class CartRepository {
     public Cart findById(int id) {
 
         return carts.get(id);
+
+    }
+
+    public void delete(int id) {
+
+        carts.remove(id);
+
+    }
+
+    public List<Cart> findAll() {
+
+        return new ArrayList<>(carts.values());
 
     }
 

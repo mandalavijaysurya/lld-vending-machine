@@ -2,7 +2,9 @@ package com.practice.repositories;
 
 import com.practice.models.PaymentTransaction;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author: Vijaysurya Mandala
@@ -21,8 +23,13 @@ public class PaymentTransactionRepository {
 
     public PaymentTransaction save(PaymentTransaction paymentTransaction) {
 
-        count++;
-        paymentTransaction.setTransactionId(count);
+        if(!paymentTransactions.containsKey(paymentTransaction.getTransactionId())) {
+
+            count++;
+            paymentTransaction.setTransactionId(count);
+
+        }
+
         paymentTransactions.put(count, paymentTransaction);
 
         return paymentTransaction;
@@ -32,6 +39,12 @@ public class PaymentTransactionRepository {
     public PaymentTransaction getPaymentTransactionById(int id) {
 
         return paymentTransactions.get(id);
+
+    }
+
+    public List<PaymentTransaction> getAllPaymentTransactions() {
+
+        return new ArrayList<>(paymentTransactions.values());
 
     }
 

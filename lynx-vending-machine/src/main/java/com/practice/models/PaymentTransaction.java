@@ -1,10 +1,7 @@
 package com.practice.models;
 
 import com.practice.enums.PaymentStatus;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Setter
 @Getter
+@Builder
 public class PaymentTransaction {
 
     private int transactionId;

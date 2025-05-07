@@ -2,10 +2,7 @@ package com.practice.models;
 
 
 import com.practice.enums.Category;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author: Vijaysurya Mandala
@@ -16,6 +13,8 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@ToString
 public class Product {
 
     private int id;

@@ -1,9 +1,6 @@
 package com.practice.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 /**
  * @author: Vijaysurya Mandala
@@ -14,11 +11,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Inventory {
 
     private int id;
     private Product product;
     private int quantity;
-    private boolean isOutOfStock = false;
+    private boolean isOutOfStock = true;
 
 }

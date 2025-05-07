@@ -23,8 +23,13 @@ public class ProductRepository {
 
     public Product save(Product product) {
 
-        count++;
-        product.setId(count);
+        if(!products.containsKey(product.getUniqueId())) {
+
+            count++;
+            product.setId(count);
+
+        }
+
         products.put(product.getUniqueId(),product);
 
         return product;
@@ -40,6 +45,22 @@ public class ProductRepository {
     public List<Product> getAllProducts() {
 
         return new ArrayList<>(products.values());
+
+    }
+
+    public void saveAll(List<Product> products) {
+
+        products.forEach(this::save);
+
+    }
+
+    public void saveAll(Product... products) {
+
+        for(Product product : products) {
+
+            this.save(product);
+
+        }
 
     }
 

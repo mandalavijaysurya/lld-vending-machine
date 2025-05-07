@@ -9,9 +9,10 @@
 - [x] Gather Requirements
 - [x] Define Models
 - [x] Define Repositories
+- [ ] Define Exceptions
 - [ ] Define UML Class Diagram
-- [ ] Write code
-- [ ] Write Unit Tests
+- [x] Write code
+- [x] Write Unit Tests
 
 ### 🧠 Requirements
 
@@ -34,7 +35,9 @@ cd lld-vending-machine/lynx-vending-machine
 maven clean install
 
 # Executing the project
-maven exec: java -Dexec.mainClass="<update the main class"
+maven clean install
+
+java -jar /target/*.jar
 ```
 
 ### 🧼 Code Structure
