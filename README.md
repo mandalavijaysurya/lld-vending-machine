@@ -26,3 +26,8 @@ Safety Features:
 • Audit trails track all purchases and inventory changes.
 
 • Maintenance mode prevents user interaction during servicing.# lld-vending-machine
+
+
+
+
+![img.png](img.png)
